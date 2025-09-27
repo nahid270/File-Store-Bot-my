@@ -24,7 +24,7 @@ BOT_TOKEN = environ.get("BOT_TOKEN", "")
 
 PICS = (environ.get('PICS', 'https://i.ibb.co/MkdSHjW6/photo-2025-09-01-13-45-10-7545116409211125768.jpg')).split() # Bot Start Picture
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '7528643689').split()]
-BOT_USERNAME = environ.get("BOT_USERNAME", "FileCtgStoreBot") # without @
+BOT_USERNAME = environ.get("BOT_USERNAME", "FileCtg2StoreBot") # without @
 PORT = environ.get("PORT", "8080")
 
 # Clone Info :-

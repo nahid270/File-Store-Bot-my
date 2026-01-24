@@ -180,18 +180,22 @@ async def start(client, message):
                 else:
                     reply_markup = None
                 try:
-                    msg = await info.copy(chat_id=message.from_user.id, caption=f_caption, protect_content=False, reply_markup=reply_markup)
+                    # Updated: Using PROTECT_CONTENT from config
+                    msg = await info.copy(chat_id=message.from_user.id, caption=f_caption, protect_content=PROTECT_CONTENT, reply_markup=reply_markup)
                 except FloodWait as e:
                     await asyncio.sleep(e.value)
-                    msg = await info.copy(chat_id=message.from_user.id, caption=f_caption, protect_content=False, reply_markup=reply_markup)
+                    # Updated: Using PROTECT_CONTENT from config
+                    msg = await info.copy(chat_id=message.from_user.id, caption=f_caption, protect_content=PROTECT_CONTENT, reply_markup=reply_markup)
                 except:
                     continue
             else:
                 try:
-                    msg = await info.copy(chat_id=message.from_user.id, protect_content=False)
+                    # Updated: Using PROTECT_CONTENT from config
+                    msg = await info.copy(chat_id=message.from_user.id, protect_content=PROTECT_CONTENT)
                 except FloodWait as e:
                     await asyncio.sleep(e.value)
-                    msg = await info.copy(chat_id=message.from_user.id, protect_content=False)
+                    # Updated: Using PROTECT_CONTENT from config
+                    msg = await info.copy(chat_id=message.from_user.id, protect_content=PROTECT_CONTENT)
                 except:
                     continue
             filesarr.append(msg)
@@ -252,9 +256,11 @@ async def start(client, message):
                     reply_markup=InlineKeyboardMarkup(button)
             else:
                 reply_markup = None
-            del_msg = await msg.copy(chat_id=message.from_user.id, caption=f_caption, reply_markup=reply_markup, protect_content=False)
+            # Updated: Using PROTECT_CONTENT from config
+            del_msg = await msg.copy(chat_id=message.from_user.id, caption=f_caption, reply_markup=reply_markup, protect_content=PROTECT_CONTENT)
         else:
-            del_msg = await msg.copy(chat_id=message.from_user.id, protect_content=False)
+            # Updated: Using PROTECT_CONTENT from config
+            del_msg = await msg.copy(chat_id=message.from_user.id, protect_content=PROTECT_CONTENT)
         if AUTO_DELETE_MODE == True:
             k = await client.send_message(chat_id = message.from_user.id, text=f"<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie File/Video will be deleted in <b><u>{AUTO_DELETE} minutes</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there</b>")
             await asyncio.sleep(AUTO_DELETE_TIME)

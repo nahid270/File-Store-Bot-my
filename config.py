@@ -19,7 +19,7 @@ def is_enabled(value, default):
       
 # Bot Information
 API_ID = int(environ.get("API_ID", "28870226"))
-API_HASH = environ.get("API_HASH", "a5b1ff3f75941649bf5bc159782f0f00")
+API_HASH = environ.get("API_HASH", "a5b1ff3f75941649bf5bc159782f0f00"))
 BOT_TOKEN = environ.get("BOT_TOKEN", "8430546538:AAF3bUks2gOKdNlUFrh2Yz70toSm1EH0GXk")
 
 PICS = (environ.get('PICS', 'https://i.ibb.co/MkdSHjW6/photo-2025-09-01-13-45-10-7545116409211125768.jpg')).split() # Bot Start Picture
@@ -55,6 +55,10 @@ BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", CUSTOM_FILE_CAPTION)
 # Enable - True or Disable - False
 PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "True")), True)
 
+# --- NEW FEATURE ADDED ---
+# Protect Content: True = User can't forward/save, False = User can forward/save
+PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
+
 # Verify Info :-
 VERIFY_MODE = bool(environ.get('VERIFY_MODE', False)) # Set True or False
 
@@ -86,4 +90,3 @@ URL = environ.get("URL", "https://tough-albina-nahidhf-7f836f58.koyeb.app/")
 # Don't Remove Credit Tg - @VJ_Botz
 # Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
 # Ask Doubt on telegram @KingVJ01
-    
